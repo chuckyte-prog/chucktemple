@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chuck Temple — Fractional COO for Local Service Businesses</title>
-  <meta name="description" content="I help local service business owners fix their operations, build systems, and stop being the bottleneck. Fractional COO for pest control, landscaping, cleaning, and HVAC companies." />
+  <meta name="description" content="I help local service business owners fix their operations, get their time back, and fall back in love with what they built. Fractional COO for pest control, landscaping, cleaning, and HVAC companies." />
   <link rel="canonical" href="https://chucktemple.com/" />
   <meta property="og:title" content="Chuck Temple — Fractional COO for Local Service Businesses" />
-  <meta property="og:description" content="I help local service business owners fix their operations, build systems, and stop being the bottleneck." />
+  <meta property="og:description" content="I help local service business owners fix their operations, get their time back, and fall back in love with what they built." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chucktemple.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -98,7 +98,6 @@
       overflow: hidden;
     }
 
-    /* Noise texture overlay */
     .hero-section::before {
       content: '';
       position: absolute;
@@ -109,7 +108,6 @@
       pointer-events: none;
     }
 
-    /* Orange diagonal accent */
     .hero-section::after {
       content: '';
       position: absolute;
@@ -119,7 +117,6 @@
       background: linear-gradient(180deg, var(--orange) 0%, transparent 100%);
     }
 
-    /* Grid lines — blueprint effect */
     .hero-grid {
       position: absolute;
       inset: 0;
@@ -178,9 +175,9 @@
 
     .hero-sub {
       font-size: 1.05rem;
-      color: rgba(242, 242, 245, 0.65);
+      color: rgba(242, 242, 245, 0.7);
       line-height: 1.8;
-      max-width: 460px;
+      max-width: 480px;
       margin-bottom: 2.5rem;
       font-weight: 400;
       opacity: 0;
@@ -191,11 +188,22 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      align-items: center;
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.55s;
     }
 
-    /* Photo side */
+    .hero-cta-secondary {
+      font-size: 0.82rem; font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 1px;
+    }
+    .hero-cta-secondary:hover { color: rgba(255,255,255,0.9); border-bottom-color: rgba(255,255,255,0.5); }
+
     .hero-photo-wrap {
       position: relative;
       opacity: 0;
@@ -209,7 +217,6 @@
       position: relative;
     }
 
-    /* Blue tint overlay on photo */
     .hero-photo::after {
       content: '';
       position: absolute;
@@ -229,7 +236,6 @@
       display: block;
     }
 
-    /* Orange corner accent on photo */
     .hero-photo-wrap::before {
       content: '';
       position: absolute;
@@ -240,7 +246,6 @@
       pointer-events: none;
     }
 
-    /* Stats strip below photo */
     .hero-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -275,8 +280,6 @@
       font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
       padding: 1rem 2rem; text-decoration: none;
       border: none;
-      position: relative;
-      overflow: hidden;
       transition: background 0.2s, transform 0.15s;
     }
     .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
@@ -297,20 +300,24 @@
       background: transparent; color: var(--blue);
       font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
       padding: 1rem 2rem; text-decoration: none;
-      border: 2px solid var(--blue);
+      border: 1px solid var(--blue);
       transition: background 0.2s, color 0.2s, transform 0.15s;
     }
     .btn-secondary:hover { background: var(--blue); color: white; transform: translateY(-1px); }
 
-    /* ─── SECTION SHARED ──────────────────────────────────────── */
-    .section-inner { max-width: 1100px; margin: 0 auto; }
+    /* ─── SECTION BASE ────────────────────────────────────────── */
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
     .section-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--blue); margin-bottom: 1rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 1.25rem;
     }
     .section-eyebrow::before {
       content: '';
@@ -323,8 +330,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--orange); margin-bottom: 1rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 1.25rem;
     }
     .section-eyebrow-orange::before {
       content: '';
@@ -333,38 +341,34 @@
       background: var(--orange);
     }
 
-    .section-lead { color: var(--muted); font-size: 1rem; max-width: 520px; margin-bottom: 3rem; line-height: 1.75; }
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
 
-    /* Fade-in on scroll */
-    .js-loaded .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+    .section-lead {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-top: 0.75rem;
+      margin-bottom: 3rem;
+      line-height: 1.75;
     }
-    .js-loaded .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-    .reveal-delay-6 { transition-delay: 0.6s; }
 
     /* ─── PROBLEM SECTION ─────────────────────────────────────── */
     .section-problem {
       background: var(--dark-bg);
-      padding: 6rem 3rem;
+      padding: 7rem 3rem;
       position: relative;
       overflow: hidden;
     }
 
-    /* Large watermark text */
-    .section-problem::before {
+    .section-problem::after {
       content: '?';
       position: absolute;
-      right: -0.1em;
+      right: -2rem;
       top: 50%;
       transform: translateY(-50%);
       font-size: 30rem;
@@ -373,14 +377,12 @@
       line-height: 1;
       pointer-events: none;
       user-select: none;
-      letter-spacing: -0.05em;
     }
 
     .section-problem h2 {
       color: var(--dark-text);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
-      margin-bottom: 3rem; max-width: 640px;
+      max-width: 600px;
+      margin-bottom: 3rem;
     }
 
     .pain-points {
@@ -388,123 +390,134 @@
       grid-template-columns: 1fr 1fr;
       gap: 1px;
       background: var(--dark-rule);
-      border: 1px solid var(--dark-rule);
     }
 
     .pain-point {
       background: var(--dark-bg);
-      padding: 1.75rem 2rem;
+      padding: 1.5rem 1.75rem;
       font-size: 1rem;
-      color: rgba(242, 242, 245, 0.85);
-      line-height: 1.7;
+      color: rgba(242, 242, 245, 0.75);
+      line-height: 1.65;
       font-weight: 500;
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
       position: relative;
-      transition: background 0.2s, color 0.2s;
-      cursor: default;
     }
-
     .pain-point::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      background: var(--blue);
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform 0.3s ease;
+      content: '—';
+      color: var(--orange);
+      margin-right: 0.6rem;
+      font-weight: 700;
     }
-
     .pain-point:hover {
-      background: var(--dark-surface);
+      border-left-color: var(--orange);
       color: var(--dark-text);
-    }
-
-    .pain-point:hover::before {
-      transform: scaleY(1);
+      background: rgba(255,255,255,0.03);
     }
 
     /* ─── SOLUTION SECTION ────────────────────────────────────── */
     .section-solution {
       background: var(--white);
-      padding: 6rem 3rem;
+      padding: 7rem 3rem;
       border-top: 1px solid var(--rule);
-    }
-
-    .section-solution h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800; letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
     }
 
     .process-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0;
       border: 1px solid var(--rule);
     }
 
     .process-step {
-      padding: 2.5rem;
-      position: relative;
+      padding: 2.5rem 2rem;
       border-right: 1px solid var(--rule);
-      overflow: hidden;
-      transition: background 0.25s;
+      position: relative;
+      transition: background 0.2s;
     }
-
     .process-step:last-child { border-right: none; }
-
     .process-step:hover { background: var(--off-white); }
 
-    /* Huge background number */
     .process-number {
-      font-size: 7rem;
+      font-size: 5rem;
       font-weight: 800;
       color: var(--rule);
       line-height: 1;
-      letter-spacing: -0.05em;
-      position: absolute;
-      right: -0.1em;
-      top: -0.15em;
-      transition: color 0.25s;
-      user-select: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+      letter-spacing: -0.04em;
     }
-
     .process-step:hover .process-number { color: var(--blue-light); }
 
-    .process-step-content { position: relative; z-index: 1; }
-
     .process-step-label {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--blue); margin-bottom: 0.75rem;
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .process-step-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
     }
 
     .process-step h3 {
-      font-size: 1.3rem; font-weight: 800;
-      letter-spacing: -0.02em; margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
     }
 
     .process-step p {
-      font-size: 1rem; color: var(--muted); line-height: 1.75;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
-    /* ─── SERVICES SECTION ────────────────────────────────────── */
-    .section-services {
+    /* ─── WHAT I CAN FIX ──────────────────────────────────────── */
+    .section-capabilities {
       background: var(--off-white);
-      padding: 6rem 3rem;
+      padding: 7rem 3rem;
       border-top: 1px solid var(--rule);
     }
 
-    .section-services h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem;
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .capability-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--blue);
+      padding: 2rem 2rem 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .capability-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .capability-card:first-child {
+      grid-column: 1 / -1;
+      border-top-color: var(--orange);
+    }
+
+    .capability-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .capability-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── SERVICE TIERS ───────────────────────────────────────── */
+    .section-services {
+      background: var(--white);
+      padding: 7rem 3rem;
+      border-top: 1px solid var(--rule);
     }
 
     .services-grid {
@@ -517,260 +530,323 @@
       background: var(--white);
       border: 1px solid var(--rule);
       border-top: 3px solid var(--blue);
-      padding: 2.25rem;
-      display: flex; flex-direction: column; gap: 0.6rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
-
     .service-card.featured {
       border-top-color: var(--orange);
-      box-shadow: 0 4px 24px var(--orange-glow);
+      box-shadow: 0 0 0 1px rgba(232,93,38,0.12), 0 4px 16px var(--orange-glow);
     }
-
     .service-card.featured:hover {
-      box-shadow: 0 12px 48px rgba(232,93,38,0.2);
+      box-shadow: 0 0 0 1px rgba(232,93,38,0.2), 0 12px 32px var(--orange-glow);
     }
 
     .service-label {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
     .service-card.featured .service-label { color: var(--orange); }
 
     .service-card h3 {
-      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .service-card p {
-      font-size: 1rem; color: var(--muted); line-height: 1.75; flex: 1;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
     }
 
     .service-divider {
-      height: 1px; background: var(--rule); margin: 0.5rem 0;
+      height: 1px;
+      background: var(--rule);
+      margin: 0.5rem 0;
     }
 
     .service-price {
-      font-size: 1rem; font-weight: 700; color: var(--ink);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
     }
 
     .service-cta {
-      font-size: 0.82rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--orange); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      transition: color 0.2s;
       margin-top: 0.25rem;
-      transition: gap 0.2s;
     }
-    .service-cta:hover { gap: 0.7rem; }
+    .service-cta:hover { color: var(--orange-dark); }
 
-    /* ─── INDUSTRIES ──────────────────────────────────────────── */
-    .section-industries {
+    /* ─── GUARANTEE ───────────────────────────────────────────── */
+    .section-guarantee {
       background: var(--dark-bg);
-      padding: 5rem 3rem;
+      padding: 7rem 3rem;
       position: relative;
       overflow: hidden;
+      border-top: 4px solid var(--orange);
     }
 
-    .section-industries h2 {
-      color: var(--dark-text);
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem;
+    .section-guarantee::before {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(232,93,38,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .section-industries .section-lead {
-      color: var(--dark-muted);
-    }
-
-    .industries-grid {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem;
-    }
-
-    .industry-item {
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--dark-rule);
-      font-size: 0.95rem; font-weight: 600;
-      color: rgba(242,242,245,0.7);
-      background: rgba(255,255,255,0.04);
-      letter-spacing: 0.02em;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-      cursor: default;
-    }
-
-    .industry-item:hover {
-      border-color: var(--blue);
-      color: var(--dark-text);
-      background: rgba(43,94,167,0.1);
-    }
-
-    /* ─── ABOUT ───────────────────────────────────────────────── */
-    .section-about {
-      background: var(--white);
-      padding: 6rem 3rem;
-      border-top: 1px solid var(--rule);
-    }
-
-    .about-inner {
-      max-width: 1100px; margin: 0 auto;
+    .guarantee-inner {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
       align-items: center;
     }
 
-    .about-left h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.15; margin-bottom: 1.25rem;
+    .guarantee-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    .guarantee-label::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--orange);
+    }
+
+    .guarantee-inner h2 {
+      color: var(--dark-text);
+      margin-bottom: 2rem;
+    }
+
+    .guarantee-body {
+      font-size: 1rem;
+      color: rgba(242,242,245,0.7);
+      line-height: 1.85;
+    }
+
+    .guarantee-callout {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-rule);
+      border-left: 4px solid var(--orange);
+      padding: 2rem 2.5rem;
+      font-size: 1.1rem;
+      color: var(--dark-text);
+      line-height: 1.75;
+      font-style: italic;
+      font-weight: 500;
+      position: relative;
+    }
+    .guarantee-callout::before {
+      content: '"';
+      position: absolute;
+      top: -0.5rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      color: var(--orange);
+      line-height: 1;
+      font-style: normal;
+      font-weight: 800;
+      opacity: 0.4;
+    }
+
+    /* ─── ABOUT ───────────────────────────────────────────────── */
+    .section-about {
+      background: var(--white);
+      padding: 7rem 3rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-left h2 { margin-bottom: 1.5rem; }
 
     .about-left p {
-      color: var(--muted); font-size: 1rem;
-      line-height: 1.8; margin-bottom: 2rem;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
     }
 
-    .about-right {
-      display: flex; flex-direction: column; gap: 1px;
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
       background: var(--rule);
-      border: 1px solid var(--rule);
     }
 
     .about-stat {
       background: var(--off-white);
-      padding: 1.5rem 2rem;
-      display: flex; flex-direction: column; gap: 0.25rem;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: center;
       transition: background 0.2s;
     }
     .about-stat:hover { background: var(--white); }
 
     .about-stat-number {
-      font-size: 2rem; font-weight: 800;
-      color: var(--ink); letter-spacing: -0.03em; line-height: 1;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1;
     }
 
     .about-stat-label {
-      font-size: 0.9rem; font-weight: 500;
-      color: var(--muted); line-height: 1.4;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.4;
     }
 
-    /* ─── PROJECTS ────────────────────────────────────────────── */
-    .section-projects {
+    /* ─── INDUSTRIES ──────────────────────────────────────────── */
+    .section-industries {
+      background: var(--dark-bg);
+      padding: 7rem 3rem;
+    }
+
+    .section-industries h2 { color: var(--dark-text); margin-bottom: 0.75rem; }
+
+    .section-industries .section-lead {
+      color: var(--dark-muted);
+      margin-bottom: 3rem;
+    }
+
+    .industries-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .industry-item {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--dark-rule);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .industry-item:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .industries-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--dark-muted);
+      font-style: italic;
+    }
+
+    /* ─── SOCIAL PROOF ────────────────────────────────────────── */
+    .section-proof {
       background: var(--off-white);
-      padding: 6rem 3rem;
+      padding: 7rem 3rem;
       border-top: 1px solid var(--rule);
     }
 
-    .section-projects h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem;
+    .proof-placeholder {
+      margin-top: 3rem;
+      border: 2px dashed var(--rule);
+      padding: 4rem 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .proof-placeholder-text {
+      font-style: italic;
+      line-height: 1.7;
     }
 
-    .project-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      padding: 2.25rem;
-      display: flex; flex-direction: column; gap: 0.6rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
-    }
-
-    /* Decorative corner */
-    .project-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 60px; height: 60px;
-      background: linear-gradient(225deg, var(--blue-light) 0%, transparent 100%);
-      transition: width 0.3s, height 0.3s;
-    }
-    .project-card:hover::after { width: 100px; height: 100px; }
-
-    .project-tag {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--blue);
-      display: inline-flex; align-items: center; gap: 0.4rem;
-    }
-    .project-tag::before {
-      content: '';
-      width: 14px; height: 2px;
-      background: var(--blue);
-    }
-
-    .project-card h3 {
-      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em;
-    }
-
-    .project-card p {
-      font-size: 1rem; color: var(--muted);
-      line-height: 1.75; flex: 1;
-    }
-
-    .project-link {
-      font-size: 0.82rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--orange); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      margin-top: 0.25rem; position: relative; z-index: 1;
-      transition: gap 0.2s;
-    }
-    .project-link:hover { gap: 0.7rem; }
-
-    /* ─── CTA SECTION ─────────────────────────────────────────── */
+    /* ─── CTA ─────────────────────────────────────────────────── */
     .section-cta {
       background: var(--dark-bg);
-      padding: 7rem 3rem;
+      padding: 8rem 3rem;
       position: relative;
       overflow: hidden;
-      text-align: center;
-      border-top: 3px solid var(--orange);
     }
 
     .section-cta::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(232,93,38,0.08) 0%, transparent 100%);
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(232,93,38,0.08) 0%, transparent 70%);
       pointer-events: none;
+    }
+
+    .section-cta .section-inner {
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .section-cta h2 {
       color: var(--dark-text);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
-      position: relative; z-index: 1;
+      margin-bottom: 1rem;
     }
 
     .section-cta p {
+      font-size: 1rem;
       color: var(--dark-muted);
-      font-size: 1rem; margin-bottom: 2.5rem;
-      max-width: 420px; margin-left: auto; margin-right: auto;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
       line-height: 1.75;
-      position: relative; z-index: 1;
+    }
+
+    .cta-tagline {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--dark-muted);
+      font-style: italic;
     }
 
     .cta-buttons {
-      display: flex; gap: 1rem;
-      justify-content: center; flex-wrap: wrap;
-      position: relative; z-index: 1;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
 
     /* ─── FOOTER ──────────────────────────────────────────────── */
@@ -801,6 +877,7 @@
     .footer-contact a {
       color: var(--dark-muted); text-decoration: none;
       transition: color 0.2s;
+      white-space: nowrap;
     }
     .footer-contact a:hover { color: var(--dark-text); }
 
@@ -809,11 +886,22 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
 
     /* ─── MOBILE ──────────────────────────────────────────────── */
     @media (max-width: 768px) {
@@ -826,23 +914,27 @@
         gap: 0;
       }
       .hero-section h1 { font-size: 2rem; }
-      .hero-photo-wrap { order: -1; max-width: 120px; margin: 0 auto; }
+      .hero-photo-wrap { order: -1; max-width: 120px; margin: 0 auto 2rem; }
       .hero-photo { aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; }
+      .hero-photo-wrap::before { display: none; }
       .hero-stats { display: none; }
-      .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn-primary,
-      .hero-ctas .btn-ghost { text-align: center; width: 100%; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .hero-ctas .btn-primary { width: 100%; text-align: center; }
 
-      .section-problem, .section-solution, .section-services,
-      .section-industries, .section-about, .section-projects,
-      .section-cta { padding: 6rem 1.5rem 4rem; }
+      .section-problem, .section-solution, .section-capabilities,
+      .section-services, .section-guarantee, .section-about,
+      .section-industries, .section-proof, .section-cta {
+        padding: 5rem 1.5rem;
+      }
 
       .pain-points { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .process-step { border-right: none; border-bottom: 1px solid var(--rule); }
       .process-step:last-child { border-bottom: none; }
+      .capabilities-grid { grid-template-columns: 1fr; }
+      .capability-card:first-child { grid-column: 1; }
       .services-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .guarantee-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
 
       .cta-buttons { flex-direction: column; align-items: stretch; }
@@ -853,7 +945,6 @@
       footer .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
       .footer-contact { flex-direction: column; gap: 0.4rem; }
       .footer-contact span { display: none; }
-      .footer-contact a { white-space: nowrap; }
     }
   </style>
 </head>
@@ -877,11 +968,11 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-eyebrow">Fractional COO · Local Service Businesses</div>
-        <h1>You don't need more advice.<span class="hero-accent">You need someone who runs the thing.</span></h1>
-        <p class="hero-sub">I come in, build the systems, fix the operations, and hand it back to you running clean. No long-term retainer required to get started.</p>
+        <h1>You know what needs to fix.<span class="hero-accent">You just don't have time to fix it.</span></h1>
+        <p class="hero-sub">I'm Chuck. I come in, learn your business, and build the systems — so you don't have to stop running it to fix it.</p>
         <div class="hero-ctas">
           <a href="tel:8585238881" class="btn-primary">Call 858-523-8881</a>
-          <a href="/contact.html" class="btn-ghost">Send a message →</a>
+          <a href="/contact.html" class="hero-cta-secondary">Or send me a message →</a>
         </div>
       </div>
       <div class="hero-photo-wrap">
@@ -905,15 +996,15 @@
   <!-- PROBLEM -->
   <section class="section-problem">
     <div class="section-inner">
-      <div class="section-eyebrow-orange reveal">Does your business run you?</div>
-      <h2 class="reveal reveal-delay-1">If you stopped showing up tomorrow,<br>what would break first?</h2>
-      <div class="pain-points">
+      <div class="section-eyebrow-orange reveal">Sound familiar?</div>
+      <h2 class="reveal reveal-delay-1">Your business runs you.<br>Not the other way around.</h2>
+      <div class="pain-points" style="margin-top:3rem;">
         <div class="pain-point reveal reveal-delay-1">Everything runs through you. If you're not there, nothing happens.</div>
         <div class="pain-point reveal reveal-delay-2">You're working 60-hour weeks and somehow still losing money.</div>
-        <div class="pain-point reveal reveal-delay-2">You have techs but no one you can actually trust to run things.</div>
+        <div class="pain-point reveal reveal-delay-2">You have people — but no one you can actually trust to run things.</div>
+        <div class="pain-point reveal reveal-delay-3">You know you need systems, but you don't have time to build them.</div>
         <div class="pain-point reveal reveal-delay-3">Every consultant you've hired gave you a plan. Nobody stayed to build it.</div>
-        <div class="pain-point reveal reveal-delay-3">You know you need systems but you don't have time to build them.</div>
-        <div class="pain-point reveal reveal-delay-4">Your business could run without you — but right now it can't.</div>
+        <div class="pain-point reveal reveal-delay-4" style="grid-column: 1 / -1; border-left: 3px solid var(--orange); color: rgba(242,242,245,0.9);">Sound like yours? Good. That's exactly what I fix.</div>
       </div>
     </div>
   </section>
@@ -922,56 +1013,80 @@
   <section class="section-solution">
     <div class="section-inner">
       <div class="section-eyebrow reveal">That's exactly what I fix.</div>
-      <h2 class="reveal reveal-delay-1">I don't advise. I build.</h2>
-      <p class="section-lead reveal reveal-delay-2">Most consultants hand you a plan and leave. I stay until it's running.</p>
+      <h2 class="reveal reveal-delay-1">I don't hand you a deck and disappear.<br>I build it with you.</h2>
+      <p class="section-lead reveal reveal-delay-2">I come in as your right-hand — learn how your business actually works, build the systems alongside you, and hand it back running clean. You stay in the loop. I do the building.</p>
       <div class="process-grid reveal reveal-delay-2">
         <div class="process-step">
           <div class="process-number">01</div>
-          <div class="process-step-content">
-            <div class="process-step-label">Weeks 1–2</div>
-            <h3>Diagnose</h3>
-            <p>I map your operation end-to-end. Find the bottlenecks, the leaks, and the things that only live in your head.</p>
-          </div>
+          <div class="process-step-label">Step one</div>
+          <h3>Diagnose</h3>
+          <p>We talk. I ask the questions nobody's asked before. We find the real problem — not just the one that's loudest.</p>
         </div>
         <div class="process-step">
           <div class="process-number">02</div>
-          <div class="process-step-content">
-            <div class="process-step-label">Weeks 3–10</div>
-            <h3>Build</h3>
-            <p>I fix the infrastructure — SOPs, scheduling systems, hiring processes, software, customer flow. I do the work.</p>
-          </div>
+          <div class="process-step-label">Step two</div>
+          <h3>Build</h3>
+          <p>I build it. Systems, processes, tools, automations — whatever your business actually needs. Not a template. Built for you.</p>
         </div>
         <div class="process-step">
           <div class="process-number">03</div>
-          <div class="process-step-content">
-            <div class="process-step-label">Weeks 11–12</div>
-            <h3>Hand Off</h3>
-            <p>Train the team, document everything, step back. Your business now runs on systems, not on you.</p>
-          </div>
+          <div class="process-step-label">Step three</div>
+          <h3>Hand Off</h3>
+          <p>Your team can run it without me in it. That's the whole point.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- WHAT I CAN FIX -->
+  <section class="section-capabilities">
+    <div class="section-inner">
+      <div class="section-eyebrow reveal">What I can fix</div>
+      <h2 class="reveal reveal-delay-1">Most businesses have more than one thing broken.<br>I can help with all of it.</h2>
+      <div class="capabilities-grid">
+        <div class="capability-card reveal reveal-delay-1">
+          <h3>Operations &amp; Systems</h3>
+          <p>SOPs, scheduling, routing, hiring, training. The stuff that has to run whether you're there or not.</p>
+        </div>
+        <div class="capability-card reveal reveal-delay-2">
+          <h3>Marketing &amp; Lead Gen</h3>
+          <p>Website, SEO, social media, content. More of the right customers, finding you.</p>
+        </div>
+        <div class="capability-card reveal reveal-delay-2">
+          <h3>AI &amp; Automations</h3>
+          <p>Missed lead follow-up, workflow tools, automations that save you hours every week.</p>
+        </div>
+        <div class="capability-card reveal reveal-delay-3">
+          <h3>Brand &amp; Positioning</h3>
+          <p>What you say, who you say it to, and why they choose you over the other guy.</p>
+        </div>
+        <div class="capability-card reveal reveal-delay-3">
+          <h3>Personal Productivity</h3>
+          <p>Get the noise out of your head so you can actually lead your business instead of just surviving it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE TIERS -->
   <section class="section-services">
     <div class="section-inner">
-      <div class="section-eyebrow reveal">How I work</div>
+      <div class="section-eyebrow reveal">How we can work together</div>
       <h2 class="reveal reveal-delay-1">Three ways to engage.</h2>
-      <p class="section-lead reveal reveal-delay-2">Pick the level that fits where you are right now. Most clients start with the Audit.</p>
+      <p class="section-lead reveal reveal-delay-2">Pick the level that fits where you are right now. Most clients start with the Diagnostic.</p>
       <div class="services-grid">
         <div class="service-card reveal reveal-delay-1">
           <div class="service-label">Start here</div>
-          <h3>The Audit</h3>
-          <p>I map your operation, find the leaks, and hand you a prioritized action plan. One-time engagement. No ongoing commitment.</p>
+          <h3>The Diagnostic</h3>
+          <p>One focused conversation. I ask the questions, surface what's broken, and hand you a prioritized action plan. A good place to start if you're not sure where to begin.</p>
           <div class="service-divider"></div>
-          <div class="service-price">One-time flat fee</div>
+          <div class="service-price">Flat fee</div>
           <a href="tel:8585238881" class="service-cta">Get started →</a>
         </div>
         <div class="service-card featured reveal reveal-delay-2">
           <div class="service-label">Most common</div>
-          <h3>The 90-Day Build</h3>
-          <p>I fix the operations infrastructure — routing, hiring systems, SOPs, software, customer flow. I implement it. You run it.</p>
+          <h3>The Build</h3>
+          <p>A 90-day engagement. I come in, fix the infrastructure — operations, marketing, systems, tools — and hand it back running. This is the deep work.</p>
           <div class="service-divider"></div>
           <div class="service-price">$8,000–$12,000/month</div>
           <a href="tel:8585238881" class="service-cta">Get started →</a>
@@ -979,7 +1094,7 @@
         <div class="service-card reveal reveal-delay-3">
           <div class="service-label">Ongoing</div>
           <h3>The Retainer</h3>
-          <p>I stay embedded part-time as your operational right-hand. Handle what comes up, keep the systems running, help you grow.</p>
+          <p>Ongoing right-hand. Part-time, embedded, handles what comes up. For owners who want someone in their corner long-term.</p>
           <div class="service-divider"></div>
           <div class="service-price">$3,000–$5,000/month</div>
           <a href="tel:8585238881" class="service-cta">Get started →</a>
@@ -988,21 +1103,19 @@
     </div>
   </section>
 
-  <!-- INDUSTRIES -->
-  <section class="section-industries">
-    <div class="section-inner">
-      <div class="section-eyebrow-orange reveal">Industries</div>
-      <h2 class="reveal reveal-delay-1">I specialize in local service businesses.</h2>
-      <p class="section-lead reveal reveal-delay-2">If your business dispatches people to do work at homes or commercial properties, I know your world.</p>
-      <div class="industries-grid reveal reveal-delay-2">
-        <div class="industry-item">Pest Control</div>
-        <div class="industry-item">Landscaping</div>
-        <div class="industry-item">Commercial Cleaning</div>
-        <div class="industry-item">HVAC</div>
-        <div class="industry-item">Plumbing</div>
-        <div class="industry-item">Pool Service</div>
-        <div class="industry-item">Moving</div>
-        <div class="industry-item">Electrical</div>
+  <!-- GUARANTEE -->
+  <section class="section-guarantee">
+    <div class="guarantee-inner">
+      <div class="guarantee-left">
+        <div class="guarantee-label">The guarantee</div>
+        <h2>Joy or money back.</h2>
+        <p class="guarantee-body" style="margin-top:1.5rem;">I'm not done until your business feels like yours again. Until you're excited to show up, your team knows what to do, and you can actually take a weekend off.</p>
+        <p class="guarantee-body" style="margin-top:1rem;">If we work together and you don't feel that shift — you get your money back.</p>
+      </div>
+      <div class="guarantee-right reveal reveal-delay-2">
+        <div class="guarantee-callout">
+          I'm not done until your business feels like yours again. Until you're excited to show up, your team knows what to do, and you can actually take a weekend off.
+        </div>
       </div>
     </div>
   </section>
@@ -1012,50 +1125,61 @@
     <div class="about-inner">
       <div class="about-left">
         <div class="section-eyebrow reveal">About Chuck</div>
-        <h2 class="reveal reveal-delay-1">I've built businesses.<br>I've sold them.<br>Now I help others do both.</h2>
-        <p class="reveal reveal-delay-2">Two exits. COO experience running a physical operations business. Built DailyPB — a multi-tenant SaaS platform processing 1,300+ transactions a month — with no engineering team. I build systems for a living. That's what I bring into every engagement.</p>
-        <a href="/about.html" class="btn-secondary reveal reveal-delay-3" style="display:inline-block;">More about me →</a>
+        <h2 class="reveal reveal-delay-1">I've had your problems.<br>Literally.</h2>
+        <p class="reveal reveal-delay-2">I built DVD Your Memories from scratch — four locations, $2.5M in revenue, hiring systems, operations playbooks, the whole thing — then sold it.</p>
+        <p class="reveal reveal-delay-2">I've been COO of a physical products company where I tripled revenue and built the operations infrastructure from the ground up. I've built a two-sided marketplace solo, and I've taught go-to-market strategy at UC Berkeley.</p>
+        <p class="reveal reveal-delay-3">I'm not a consultant who read about your problems in a book. I've had them. I know what it feels like to be the one everything runs through — and I know how to build you out of it.</p>
+        <a href="/about.html" class="btn-secondary reveal reveal-delay-4" style="display:inline-block; margin-top:2rem;">Learn more about my background →</a>
       </div>
-      <div class="about-right reveal reveal-delay-2">
+      <div class="about-stats reveal reveal-delay-2">
         <div class="about-stat">
-          <div class="about-stat-number">2</div>
+          <div class="about-stat-number">2×</div>
           <div class="about-stat-label">Business exits as founder</div>
         </div>
         <div class="about-stat">
+          <div class="about-stat-number">$2.5M</div>
+          <div class="about-stat-label">Revenue built at DVD Your Memories</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">3×</div>
+          <div class="about-stat-label">Revenue growth as COO</div>
+        </div>
+        <div class="about-stat">
           <div class="about-stat-number">1,300+</div>
-          <div class="about-stat-label">Monthly transactions on DailyPB</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-number">90</div>
-          <div class="about-stat-label">Days to a running system</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-number">0</div>
-          <div class="about-stat-label">Engineers needed to build DailyPB</div>
+          <div class="about-stat-label">Monthly transactions on DailyPB, built solo</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section-projects">
+  <!-- INDUSTRIES -->
+  <section class="section-industries">
     <div class="section-inner">
-      <div class="section-eyebrow reveal">Other work</div>
-      <h2 class="reveal reveal-delay-1">I build things.</h2>
-      <p class="section-lead reveal reveal-delay-2">Not just for clients. Here's proof.</p>
-      <div class="projects-grid">
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-tag">SaaS Platform</div>
-          <h3>DailyPB</h3>
-          <p>Built a multi-tenant session management platform for pickleball clubs. 1,300+ transactions/month. No engineering team. Stripe, Twilio, SendGrid.</p>
-          <a href="https://dailypb.com" target="_blank" rel="noopener" class="project-link">Visit DailyPB →</a>
-        </div>
-        <div class="project-card reveal reveal-delay-3">
-          <div class="project-tag">Book + Website</div>
-          <h3>Startup to Sold</h3>
-          <p>Authored a guide for founders building toward an exit. Built the companion site — assessment tools, broker directory, valuation calculator.</p>
-          <a href="https://startuptosold.com" target="_blank" rel="noopener" class="project-link">Visit Startup to Sold →</a>
-        </div>
+      <div class="section-eyebrow-orange reveal">Industries</div>
+      <h2 class="reveal reveal-delay-1">I work with local service businesses.</h2>
+      <p class="section-lead reveal reveal-delay-2">If your business dispatches people to do work at homes or commercial properties, I know your world.</p>
+      <div class="industries-grid reveal reveal-delay-2">
+        <div class="industry-item">Pest Control</div>
+        <div class="industry-item">Landscaping</div>
+        <div class="industry-item">Cleaning</div>
+        <div class="industry-item">HVAC</div>
+        <div class="industry-item">Plumbing</div>
+        <div class="industry-item">Pool Service</div>
+        <div class="industry-item">Moving</div>
+        <div class="industry-item">Electrical</div>
+      </div>
+      <p class="industries-note reveal reveal-delay-3">Every industry has its own language, its own pain points, its own software. I go deep on the ones I work in.</p>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section-proof">
+    <div class="section-inner">
+      <div class="section-eyebrow reveal">Results</div>
+      <h2 class="reveal reveal-delay-1">What clients say.</h2>
+      <div class="proof-placeholder reveal reveal-delay-2">
+        <p class="proof-placeholder-text">Testimonials coming as engagements close.<br>Check back soon — or call and ask me directly.</p>
+        <a href="tel:8585238881" style="display:inline-block; margin-top:1.5rem; font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange); text-decoration:none;">Call 858-523-8881 →</a>
       </div>
     </div>
   </section>
@@ -1064,11 +1188,12 @@
   <section class="section-cta">
     <div class="section-inner">
       <h2 class="reveal">Ready to stop being the bottleneck?</h2>
-      <p class="reveal reveal-delay-1">Takes 15 minutes to figure out if I can help. No pitch, no proposal — just a conversation.</p>
+      <p class="reveal reveal-delay-1">Let's talk. Tell me what's broken and we'll figure out if I can help. No pitch, no pressure — just a conversation.</p>
       <div class="cta-buttons reveal reveal-delay-2">
         <a href="tel:8585238881" class="btn-primary">Call 858-523-8881</a>
         <a href="/contact.html" class="btn-ghost">Send a message →</a>
       </div>
+      <p class="cta-tagline reveal reveal-delay-3">I pick up, or I call you back same day.</p>
     </div>
   </section>
 
@@ -1085,16 +1210,13 @@
   </footer>
 
   <script>
-    // Mark body as JS-loaded so reveal animations activate
     document.body.classList.add('js-loaded');
 
-    // Nav: transparent over hero, frosted on scroll
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
