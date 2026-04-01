@@ -993,6 +993,128 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
+    /* ─── MID-PAGE CTA ───────────────────────────────────────── */
+    .section-midcta {
+      background: var(--off-white);
+      padding: 4rem 3rem;
+    }
+    .section-midcta h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    /* ─── ABOUT (new layout) ──────────────────────────────────── */
+    .about-body {
+      max-width: 680px;
+      margin-bottom: 4rem;
+    }
+    .about-body p {
+      margin-bottom: 1.25rem;
+    }
+    .about-bottom {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-book img {
+      width: 100%;
+      max-width: 220px;
+      display: block;
+    }
+    .about-stats-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .about-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .about-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .about-links a:hover { color: var(--blue-dark); }
+
+    /* ─── CONTACT MODAL ───────────────────────────────────────── */
+    .form-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 15, 25, 0.85);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+    .form-overlay.open { display: flex; }
+    .form-modal {
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-rule);
+      padding: 3rem;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+    }
+    .form-modal h2 {
+      color: var(--dark-text);
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .form-modal p {
+      color: var(--dark-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .form-close {
+      position: absolute;
+      top: 1rem; right: 1.25rem;
+      background: none; border: none; cursor: pointer;
+      color: var(--dark-muted); font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+    .form-close:hover { color: var(--dark-text); }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .form-field label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-muted);
+    }
+    .form-field input,
+    .form-field textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--dark-rule);
+      color: var(--dark-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--orange);
+    }
+
     /* ─── MOBILE ──────────────────────────────────────────────── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; grid-template-columns: 1fr auto; gap: 0.5rem; }
@@ -1030,8 +1152,10 @@
       .testimonials-grid { grid-template-columns: 1fr; }
       .capability-card:first-child { grid-column: 1; }
       .services-grid { grid-template-columns: 1fr; }
-      .guarantee-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .about-bottom { grid-template-columns: 1fr; gap: 2rem; }
+      .about-book img { max-width: 160px; margin: 0 auto; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-modal { padding: 2rem 1.5rem; }
 
       .cta-buttons { flex-direction: column; align-items: stretch; }
       .cta-buttons .btn-primary,
@@ -1046,12 +1170,41 @@
 </head>
 <body>
 
+  <!-- CONTACT FORM MODAL -->
+  <div class="form-overlay" id="form-overlay">
+    <div class="form-modal">
+      <button class="form-close" id="form-close" aria-label="Close">✕</button>
+      <h2>Send a message</h2>
+      <p>Tell me what's going on. I'll get back to you same day.</p>
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" required placeholder="Jane Smith" />
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Your Email</label>
+            <input type="email" id="cf-email" name="email" required placeholder="jane@company.com" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">What's going on?</label>
+          <textarea id="cf-message" name="message" required rows="5" placeholder="Tell me a little about your business and what you're trying to fix..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" id="cf-submit" style="width:100%;border:none;cursor:pointer;">Send Message</button>
+      </form>
+      <div id="form-success" style="display:none;text-align:center;padding:2rem 0;">
+        <p style="font-size:1.4rem;font-weight:800;color:var(--orange);margin-bottom:0.5rem;">Message received.</p>
+        <p style="color:var(--dark-muted);">I'll be in touch soon.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="/how-it-works.html">How It Works</a>
-    <a href="/about.html">About</a>
-    <a href="/pest-control.html">Pest Control</a>
-    <a href="/contact.html">Contact</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
     <a href="tel:8585238881" class="mobile-phone">858-523-8881</a>
   </div>
 
@@ -1059,10 +1212,9 @@
   <nav id="main-nav">
     <a href="/" class="nav-logo">Chuck Temple<span class="nav-dot">.</span><span class="nav-tagline">Local Service Business Right-Hand Man</span></a>
     <ul class="nav-links">
-      <li><a href="/how-it-works.html">How It Works</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/pest-control.html">Pest Control</a></li>
-      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
       <a href="tel:8585238881" class="nav-phone">858-523-8881</a>
@@ -1082,7 +1234,7 @@
         <p class="hero-sub">I'm Chuck. I come in, learn your business, and build the systems — so you don't have to stop running it to fix it.</p>
         <div class="hero-ctas">
           <a href="tel:8585238881" class="btn-primary">Call 858-523-8881</a>
-          <a href="/contact.html" class="hero-cta-secondary">Or send me a message →</a>
+          <a href="#" class="open-form" class="hero-cta-secondary">Or send me a message →</a>
         </div>
       </div>
       <div class="hero-photo-wrap">
@@ -1111,7 +1263,7 @@
   </section>
 
   <!-- SOLUTION -->
-  <section class="section-solution">
+  <section class="section-solution" id="how-it-works">
     <div class="section-inner">
       <h2 class="reveal">I don't hand you a deck and disappear.<br>I build it with you.</h2>
       <div class="process-grid reveal reveal-delay-1">
@@ -1172,6 +1324,16 @@
   </section>
 
 
+  <!-- MID-PAGE CTA -->
+  <section class="section-midcta">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="reveal">Sound like what you need?</h2>
+      <div style="margin-top:2rem;" class="reveal reveal-delay-1">
+        <a href="tel:8585238881" class="btn-primary">Call 858-523-8881</a>
+      </div>
+    </div>
+  </section>
+
   <!-- GUARANTEE -->
   <section class="section-guarantee">
     <div class="guarantee-inner" style="display:block; text-align:center; padding: 5rem 3rem;">
@@ -1181,58 +1343,52 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="section-about">
+  <section class="section-about" id="about">
     <div class="section-inner">
-    <div class="about-inner">
-      <div class="about-left">
-        <div class="section-eyebrow reveal">About Chuck</div>
-        <h2 class="reveal reveal-delay-1">I've had your problems.<br>Literally.</h2>
-        <p class="reveal reveal-delay-2">I built DVD Your Memories from scratch — four locations, $2.5M in revenue, 4.8+ stars across 600+ Yelp reviews, one of the highest-rated service businesses in Southern California. Hiring systems, operations playbooks, the whole thing — then sold it.</p>
-        <p class="reveal reveal-delay-2">I've been COO of a physical products company where I tripled revenue and built the operations infrastructure from the ground up. I've built a two-sided marketplace solo, and I've taught go-to-market strategy at UC Berkeley.</p>
-        <p class="reveal reveal-delay-3">I'm not a consultant who read about your problems in a book. I've had them. I know what it feels like to be the one everything runs through — and I know how to build you out of it.</p>
-        <a href="/about.html" class="btn-secondary reveal reveal-delay-4" style="display:inline-block; margin-top:2rem;">Learn more about my background →</a>
+      <div class="section-eyebrow reveal">About Chuck</div>
+      <h2 class="reveal reveal-delay-1">I figure it out.</h2>
+      <div class="about-body reveal reveal-delay-2">
+        <p>I'm not going to tell you I have all the answers. What I can tell you is that I don't quit until I find them.</p>
+        <p>I built DVD Your Memories with no playbook — figured out hiring, operations, quality control, all of it from scratch. It became one of the largest and most highly rated media transfer companies in the country. 27 employees. 4.8 stars across 600+ Yelp reviews. I wrote the book about it, published by Inc. Magazine.</p>
+        <p>I started the Electric Scooter Guide with zero experience in affiliate sites, content, or being on camera. Figured it out anyway. Built a community of millions, became one of the top influencers in the market, and still get recognized on the street from videos with millions of views.</p>
+        <p>As COO of Happy Moose Juice, I built their production and delivery infrastructure from the ground up and helped triple revenue.</p>
+        <p>Three completely different businesses. Same approach every time — show up, figure it out, get it done.</p>
+        <p>That's exactly how I'll work on yours.</p>
+        <p><em>Oh — and I have an MBA. But that's not why any of this worked.</em></p>
       </div>
-      <div class="about-stats reveal reveal-delay-2">
-        <div class="about-stat">
-          <div class="about-stat-number">2×</div>
-          <div class="about-stat-label">Business exits as founder</div>
+      <div class="about-bottom reveal reveal-delay-3">
+        <div class="about-book">
+          <img src="book-cover.png" alt="Startup to Sold by Chuck Temple" />
         </div>
-        <div class="about-stat">
-          <div class="about-stat-number">$2.5M</div>
-          <div class="about-stat-label">Revenue built at DVD Your Memories</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-number">3×</div>
-          <div class="about-stat-label">Revenue growth as COO</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-number">1,300+</div>
-          <div class="about-stat-label">Monthly transactions on DailyPB, built solo</div>
+        <div class="about-stats-links">
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="about-stat-number">50% YoY</div>
+              <div class="about-stat-label">Revenue growth, 6 years straight</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">4</div>
+              <div class="about-stat-label">Locations scaled from one</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">27</div>
+              <div class="about-stat-label">Employees hired and managed</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">4.8★</div>
+              <div class="about-stat-label">Average rating, 600+ reviews</div>
+            </div>
+          </div>
+          <div class="about-links">
+            <a href="https://www.linkedin.com/in/chuck-temple/" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+            <a href="https://amzn.to/4v4Kztb" target="_blank" rel="noopener">Get the book on Amazon →</a>
+            <a href="https://startuptosold.com" target="_blank" rel="noopener">startuptosold.com →</a>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
-  <!-- INDUSTRIES -->
-  <section class="section-industries">
-    <div class="section-inner">
-      <div class="section-eyebrow-orange reveal">Industries</div>
-      <h2 class="reveal reveal-delay-1">I work with local service businesses.</h2>
-      <p class="section-lead reveal reveal-delay-2">If your business dispatches people to do work at homes or commercial properties, I know your world.</p>
-      <div class="industries-grid reveal reveal-delay-2">
-        <div class="industry-item">Pest Control</div>
-        <div class="industry-item">Landscaping</div>
-        <div class="industry-item">Cleaning</div>
-        <div class="industry-item">HVAC</div>
-        <div class="industry-item">Plumbing</div>
-        <div class="industry-item">Pool Service</div>
-        <div class="industry-item">Moving</div>
-        <div class="industry-item">Electrical</div>
-      </div>
-      <p class="industries-note reveal reveal-delay-3">Every industry has its own language, its own pain points, its own software. I go deep on the ones I work in.</p>
-    </div>
-  </section>
 
   <!-- SOCIAL PROOF -->
   <section class="section-proof">
@@ -1261,13 +1417,13 @@
   </section>
 
   <!-- CTA -->
-  <section class="section-cta">
+  <section class="section-cta" id="contact">
     <div class="section-inner">
       <h2 class="reveal">Ready to enjoy your business again?</h2>
       <p class="reveal reveal-delay-1">Let's talk. Tell me what's broken and we'll figure out if I can help. No pitch, no pressure — just a conversation.</p>
       <div class="cta-buttons reveal reveal-delay-2">
         <a href="tel:8585238881" class="btn-primary">Call 858-523-8881</a>
-        <a href="/contact.html" class="btn-ghost">Send a message →</a>
+        <a href="#" class="open-form" class="btn-ghost">Send a message →</a>
       </div>
       <p class="cta-tagline reveal reveal-delay-3">I pick up, or I call you back same day.</p>
     </div>
@@ -1306,6 +1462,49 @@
         hamburger.classList.remove('open');
         document.body.style.overflow = '';
       });
+    });
+
+    // Contact form modal
+    const formOverlay = document.getElementById('form-overlay');
+    document.querySelectorAll('.open-form').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        formOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.getElementById('form-close').addEventListener('click', () => {
+      formOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    formOverlay.addEventListener('click', e => {
+      if (e.target === formOverlay) {
+        formOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('cf-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      const data = new FormData(this);
+      data.append('_subject', 'New inquiry from chucktemple.com');
+      try {
+        const res = await fetch('https://formspree.io/f/mlgolygd', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          alert('Something went wrong. Please call 858-523-8881.');
+        }
+      } catch(err) {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        alert('Something went wrong. Please call 858-523-8881.');
+      }
     });
 
     const reveals = document.querySelectorAll('.reveal');
