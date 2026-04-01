@@ -302,15 +302,7 @@
       display: block;
     }
 
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      bottom: -8px; right: -8px;
-      width: 60%; height: 60%;
-      border: 2px solid var(--orange);
-      opacity: 0.3;
-      pointer-events: none;
-    }
+    .hero-photo-wrap::before { display: none; }
 
     .hero-stats {
       display: grid;
@@ -1097,7 +1089,6 @@
         <div class="hero-photo">
           <img src="chuck-headshot.jpg" alt="Chuck Temple, Fractional COO" />
         </div>
-        <div class="hero-photo-tagline">I get my hands dirty.</div>
       </div>
     </div>
   </section>
