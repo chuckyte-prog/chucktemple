@@ -71,6 +71,15 @@
       text-decoration: none; letter-spacing: -0.01em; white-space: nowrap;
     }
     .nav-dot { color: var(--orange); }
+    .nav-tagline {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dark-muted);
+      margin-top: 0.1rem;
+    }
     .nav-links {
       justify-self: center;
       display: flex; gap: 2rem; align-items: center; list-style: none;
@@ -156,6 +165,16 @@
       display: block;
       width: 24px; height: 2px;
       background: var(--orange);
+    }
+
+    .hero-promise {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.2s;
     }
 
     .hero-section h1 {
@@ -503,6 +522,9 @@
       border-top: 3px solid var(--blue);
       padding: 2rem 2rem 2rem;
       transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
     .capability-card:hover {
       transform: translateY(-3px);
@@ -982,7 +1004,7 @@
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="/" class="nav-logo">Chuck Temple<span class="nav-dot">.</span></a>
+    <a href="/" class="nav-logo">Chuck Temple<span class="nav-dot">.</span><span class="nav-tagline">Local Service Business Right-Hand Man</span></a>
     <ul class="nav-links">
       <li><a href="/how-it-works.html">How It Works</a></li>
       <li><a href="/about.html">About</a></li>
@@ -997,7 +1019,8 @@
     <div class="hero-grid"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-eyebrow">Local Service Business Right-Hand Man</div>
+        <div class="hero-eyebrow">Fractional COO</div>
+        <div class="hero-promise">I fix it. You enjoy it.</div>
         <h1>You know what needs to fix.<span class="hero-accent">You just don't have time to fix it.</span></h1>
         <p class="hero-sub">I'm Chuck. I come in, learn your business, and build the systems — so you don't have to stop running it to fix it.</p>
         <div class="hero-ctas">
@@ -1008,16 +1031,6 @@
       <div class="hero-photo-wrap">
         <div class="hero-photo">
           <img src="chuck-headshot.jpg" alt="Chuck Temple, Fractional COO" />
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-number">2×</div>
-            <div class="hero-stat-label">Exits</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">1,300+</div>
-            <div class="hero-stat-label">Transactions/mo</div>
-          </div>
         </div>
         <div class="hero-photo-tagline">I get my hands dirty.</div>
       </div>
@@ -1076,30 +1089,30 @@
       <div class="section-eyebrow reveal">I see the whole business.</div>
       <h2 class="reveal reveal-delay-1">Most consultants fix one thing.<br>I look at everything.</h2>
       <div class="capabilities-grid">
-        <div class="capability-card reveal reveal-delay-1">
+        <a href="/operations.html" class="capability-card reveal reveal-delay-1">
           <h3>Operations &amp; Scheduling</h3>
           <p>Routing, SOPs, software. Runs clean whether you're there or not.</p>
-        </div>
-        <div class="capability-card reveal reveal-delay-2">
+        </a>
+        <a href="/marketing.html" class="capability-card reveal reveal-delay-2">
           <h3>Marketing &amp; Lead Gen</h3>
           <p>Local SEO, Google, social. More customers finding you.</p>
-        </div>
-        <div class="capability-card reveal reveal-delay-2">
+        </a>
+        <a href="/hiring.html" class="capability-card reveal reveal-delay-2">
           <h3>Hiring &amp; Training</h3>
           <p>Finding good people, keeping them, onboarding without you.</p>
-        </div>
-        <div class="capability-card reveal reveal-delay-3">
+        </a>
+        <a href="/finance.html" class="capability-card reveal reveal-delay-3">
           <h3>Finance &amp; Pricing</h3>
           <p>Know what's actually profitable. Stop guessing.</p>
-        </div>
-        <div class="capability-card reveal reveal-delay-3">
+        </a>
+        <a href="/automations.html" class="capability-card reveal reveal-delay-3">
           <h3>AI &amp; Automations</h3>
           <p>Missed leads, follow-up, admin. Hours back every week.</p>
-        </div>
-        <div class="capability-card reveal reveal-delay-4">
+        </a>
+        <a href="/exit-readiness.html" class="capability-card reveal reveal-delay-4">
           <h3>Exit Readiness</h3>
           <p>Systems that make your business worth more when it's time to sell.</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
