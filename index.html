@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chuck Temple — Fractional COO for Local Service Businesses</title>
-  <meta name="description" content="I help local service business owners fix their operations, get their time back, and fall back in love with what they built. Fractional COO for pest control, landscaping, cleaning, and HVAC companies." />
+  <title>Chuck Temple — Business Consulting and Help for Bay Area Service Businesses</title>
+  <meta name="description" content="I help local service business owners fix their operations, get their time back, and fall back in love with what they built. Hands-on business help for pest control, landscaping, cleaning, and HVAC companies." />
   <link rel="canonical" href="https://chucktemple.com/" />
-  <meta property="og:title" content="Chuck Temple — Fractional COO for Local Service Businesses" />
+  <meta property="og:title" content="Chuck Temple — Business Consulting and Help for Bay Area Service Businesses" />
   <meta property="og:description" content="I help local service business owners fix their operations, get their time back, and fall back in love with what they built." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chucktemple.com/" />
@@ -780,18 +780,34 @@
       border-top: 1px solid var(--rule);
     }
 
-    .proof-placeholder {
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
       margin-top: 3rem;
-      border: 2px dashed var(--rule);
-      padding: 4rem 3rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
     }
 
-    .proof-placeholder-text {
+    .testimonial {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--blue);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
       font-style: italic;
-      line-height: 1.7;
+    }
+
+    .testimonial-attribution {
+      font-size: 0.82rem;
+      color: var(--ink);
+      font-weight: 500;
     }
 
     /* ─── CTA ─────────────────────────────────────────────────── */
@@ -932,6 +948,7 @@
       .process-step { border-right: none; border-bottom: 1px solid var(--rule); }
       .process-step:last-child { border-bottom: none; }
       .capabilities-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
       .capability-card:first-child { grid-column: 1; }
       .services-grid { grid-template-columns: 1fr; }
       .guarantee-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -996,15 +1013,16 @@
   <!-- PROBLEM -->
   <section class="section-problem">
     <div class="section-inner">
-      <div class="section-eyebrow-orange reveal">Sound familiar?</div>
-      <h2 class="reveal reveal-delay-1">Your business runs you.<br>Not the other way around.</h2>
+      <div class="section-eyebrow-orange reveal">I get it. Small business is hard.</div>
+      <h2 class="reveal reveal-delay-1">You're so busy working <em>in</em> your business,<br>there's no time to work <em>on</em> it.</h2>
+      <p class="section-lead reveal reveal-delay-2" style="color:rgba(242,242,245,0.7);">That's where I come in — I work on it for you, until you can.</p>
       <div class="pain-points" style="margin-top:3rem;">
-        <div class="pain-point reveal reveal-delay-1">Everything runs through you. If you're not there, nothing happens.</div>
-        <div class="pain-point reveal reveal-delay-2">You're working 60-hour weeks and somehow still losing money.</div>
-        <div class="pain-point reveal reveal-delay-2">You have people — but no one you can actually trust to run things.</div>
-        <div class="pain-point reveal reveal-delay-3">You know you need systems, but you don't have time to build them.</div>
-        <div class="pain-point reveal reveal-delay-3">Every consultant you've hired gave you a plan. Nobody stayed to build it.</div>
-        <div class="pain-point reveal reveal-delay-4" style="border-left: 3px solid var(--orange); color: rgba(242,242,245,0.9);">Sound like yours? Good. That's exactly what I fix.</div>
+        <div class="pain-point reveal reveal-delay-1">A business that runs without you in it.</div>
+        <div class="pain-point reveal reveal-delay-1">More time. Better margins.</div>
+        <div class="pain-point reveal reveal-delay-2">Leads captured, even when you're under a house.</div>
+        <div class="pain-point reveal reveal-delay-2">Systems your team follows without calling you.</div>
+        <div class="pain-point reveal reveal-delay-3">Someone who stays until it's actually fixed.</div>
+        <div class="pain-point reveal reveal-delay-3" style="border-left: 3px solid var(--orange); color: rgba(242,242,245,0.9);">Sound like what you need? That's exactly what I do.</div>
       </div>
     </div>
   </section>
@@ -1019,20 +1037,20 @@
         <div class="process-step">
           <div class="process-number">01</div>
           <div class="process-step-label">Step one</div>
-          <h3>Diagnose</h3>
-          <p>We talk. I ask the questions nobody's asked before. We find the real problem — not just the one that's loudest.</p>
+          <h3>We Talk</h3>
+          <p>You know what's broken. The right questions uncover the rest — and sometimes something exciting you hadn't seen.</p>
         </div>
         <div class="process-step">
           <div class="process-number">02</div>
           <div class="process-step-label">Step two</div>
-          <h3>Build</h3>
-          <p>I build it. Systems, processes, tools, automations — whatever your business actually needs. Not a template. Built for you.</p>
+          <h3>I Fix It</h3>
+          <p>Whatever's broken. I build it.</p>
         </div>
         <div class="process-step">
           <div class="process-number">03</div>
           <div class="process-step-label">Step three</div>
           <h3>Hand Off</h3>
-          <p>Your team can run it without me in it. That's the whole point.</p>
+          <p>You're set. Your team's got it.</p>
         </div>
       </div>
     </div>
@@ -1041,28 +1059,32 @@
   <!-- WHAT I CAN FIX -->
   <section class="section-capabilities">
     <div class="section-inner">
-      <div class="section-eyebrow reveal">What I can fix</div>
-      <h2 class="reveal reveal-delay-1">Most businesses have more than one thing broken.<br>I can help with all of it.</h2>
+      <div class="section-eyebrow reveal">I see the whole business.</div>
+      <h2 class="reveal reveal-delay-1">Most consultants fix one thing.<br>I look at everything.</h2>
       <div class="capabilities-grid">
         <div class="capability-card reveal reveal-delay-1">
-          <h3>Operations &amp; Systems</h3>
-          <p>SOPs, scheduling, routing, hiring, training. The stuff that has to run whether you're there or not.</p>
+          <h3>Operations &amp; Scheduling</h3>
+          <p>Routing, SOPs, software. Runs clean whether you're there or not.</p>
         </div>
         <div class="capability-card reveal reveal-delay-2">
           <h3>Marketing &amp; Lead Gen</h3>
-          <p>Website, SEO, social media, content. More of the right customers, finding you.</p>
+          <p>Local SEO, Google, social. More customers finding you.</p>
         </div>
         <div class="capability-card reveal reveal-delay-2">
+          <h3>Hiring &amp; Training</h3>
+          <p>Finding good people, keeping them, onboarding without you.</p>
+        </div>
+        <div class="capability-card reveal reveal-delay-3">
+          <h3>Finance &amp; Pricing</h3>
+          <p>Know what's actually profitable. Stop guessing.</p>
+        </div>
+        <div class="capability-card reveal reveal-delay-3">
           <h3>AI &amp; Automations</h3>
-          <p>Missed lead follow-up, workflow tools, automations that save you hours every week.</p>
+          <p>Missed leads, follow-up, admin. Hours back every week.</p>
         </div>
-        <div class="capability-card reveal reveal-delay-3">
-          <h3>Brand &amp; Positioning</h3>
-          <p>What you say, who you say it to, and why they choose you over the other guy.</p>
-        </div>
-        <div class="capability-card reveal reveal-delay-3">
-          <h3>Personal Productivity</h3>
-          <p>Get the noise out of your head so you can actually lead your business instead of just surviving it.</p>
+        <div class="capability-card reveal reveal-delay-4">
+          <h3>Exit Readiness</h3>
+          <p>Systems that make your business worth more when it's time to sell.</p>
         </div>
       </div>
     </div>
@@ -1127,7 +1149,7 @@
       <div class="about-left">
         <div class="section-eyebrow reveal">About Chuck</div>
         <h2 class="reveal reveal-delay-1">I've had your problems.<br>Literally.</h2>
-        <p class="reveal reveal-delay-2">I built DVD Your Memories from scratch — four locations, $2.5M in revenue, hiring systems, operations playbooks, the whole thing — then sold it.</p>
+        <p class="reveal reveal-delay-2">I built DVD Your Memories from scratch — four locations, $2.5M in revenue, 4.8+ stars across 600+ Yelp reviews, one of the highest-rated service businesses in Southern California. Hiring systems, operations playbooks, the whole thing — then sold it.</p>
         <p class="reveal reveal-delay-2">I've been COO of a physical products company where I tripled revenue and built the operations infrastructure from the ground up. I've built a two-sided marketplace solo, and I've taught go-to-market strategy at UC Berkeley.</p>
         <p class="reveal reveal-delay-3">I'm not a consultant who read about your problems in a book. I've had them. I know what it feels like to be the one everything runs through — and I know how to build you out of it.</p>
         <a href="/about.html" class="btn-secondary reveal reveal-delay-4" style="display:inline-block; margin-top:2rem;">Learn more about my background →</a>
@@ -1179,9 +1201,23 @@
     <div class="section-inner">
       <div class="section-eyebrow reveal">Results</div>
       <h2 class="reveal reveal-delay-1">What clients say.</h2>
-      <div class="proof-placeholder reveal reveal-delay-2">
-        <p class="proof-placeholder-text">Testimonials coming as engagements close.<br>Check back soon — or call and ask me directly.</p>
-        <a href="tel:8585238881" style="display:inline-block; margin-top:1.5rem; font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange); text-decoration:none;">Call 858-523-8881 →</a>
+      <div class="testimonials-grid reveal reveal-delay-2">
+        <div class="testimonial">
+          <p class="testimonial-quote">"From starting, running, and selling a successful business, to SEO, to consulting — Chuck is the right man for almost any type of job when it comes to making your company better."</p>
+          <div class="testimonial-attribution">— <strong>Dan Weiss</strong>, Chuck's client</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">"He greatly excelled in his abilities to design, develop, and implement efficient processes company wide. He has an unparalleled ability to manage and motivate people."</p>
+          <div class="testimonial-attribution">— <strong>Chris Papciak</strong>, reported to Chuck at DVD Your Memories</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">"Chuck Temple and his team will work their ass off for you. Every end product is quality you will NOT find anywhere in competing business."</p>
+          <div class="testimonial-attribution">— <strong>Michael Hobson</strong>, Owner, Rookies Sports Lodge</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">"Chuck literally started DVD Your Memories from scratch and turned it into a successful enterprise. He is a true entrepreneur, a great manager, leader and visionary."</p>
+          <div class="testimonial-attribution">— <strong>Gabriel K Leung</strong>, worked with Chuck</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1189,7 +1225,7 @@
   <!-- CTA -->
   <section class="section-cta">
     <div class="section-inner">
-      <h2 class="reveal">Ready to stop being the bottleneck?</h2>
+      <h2 class="reveal">Ready to enjoy your business again?</h2>
       <p class="reveal reveal-delay-1">Let's talk. Tell me what's broken and we'll figure out if I can help. No pitch, no pressure — just a conversation.</p>
       <div class="cta-buttons reveal reveal-delay-2">
         <a href="tel:8585238881" class="btn-primary">Call 858-523-8881</a>
