@@ -36,7 +36,7 @@
       --dark-rule: rgba(255,255,255,0.08);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -822,17 +822,18 @@
 
       .hero-inner {
         grid-template-columns: 1fr;
-        padding: 7rem 1.5rem 4rem;
-        gap: 3rem;
+        padding: 5rem 1.5rem 2rem;
+        gap: 2rem;
       }
-      .hero-section h1 { font-size: 2.2rem; }
+      .hero-section h1 { font-size: 2rem; }
       .hero-photo-wrap::before { display: none; }
-      .hero-photo { aspect-ratio: 1/1; }
+      .hero-photo-wrap { max-width: 260px; margin: 0 auto; }
+      .hero-photo { aspect-ratio: 4/3; }
       .hero-stats { grid-template-columns: 1fr 1fr; }
 
       .section-problem, .section-solution, .section-services,
       .section-industries, .section-about, .section-projects,
-      .section-cta { padding: 4rem 1.5rem; }
+      .section-cta { padding: 6rem 1.5rem 4rem; }
 
       .pain-points { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
