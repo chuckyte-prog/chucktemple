@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #0f1623;
+    display: flex;
+    align-items: stretch;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 60px 70px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .dot {
+    width: 36px;
+    height: 4px;
+    background: #e85d26;
+    margin-bottom: 28px;
+    border-radius: 2px;
+  }
+
+  .name {
+    font-size: 52px;
+    font-weight: 800;
+    color: #f2f2f5;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e85d26;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    margin-bottom: 36px;
+  }
+
+  .url {
+    font-size: 15px;
+    font-weight: 600;
+    color: #8e8e99;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* subtle grid overlay */
+  .left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+  }
+
+  .right {
+    width: 480px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  /* gradient fade from photo into dark bg */
+  .right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #0f1623 0%, transparent 35%);
+    z-index: 1;
+  }
+
+  /* orange accent bar on far right edge */
+  .right::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 6px; height: 100%;
+    background: #e85d26;
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="dot"></div>
+    <div class="name">Chuck Temple</div>
+    <div class="title">Small Business<br>Right-Hand Man</div>
+    <div class="url">chucktemple.com</div>
+  </div>
+  <div class="right">
+    <img src="chuck-headshot.jpg" alt="Chuck Temple" />
+  </div>
+</body>
+</html>
